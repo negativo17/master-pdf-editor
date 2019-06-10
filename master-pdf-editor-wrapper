@@ -1,0 +1,4 @@
+#!/usr/bin/sh
+# Wrapper script for Master PDF Editor.
+
+exec INSTALL_DIR/masterpdfeditor5 "$@"

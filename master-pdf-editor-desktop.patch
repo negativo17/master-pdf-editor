@@ -1,0 +1,18 @@
+--- master-pdf-editor-5/masterpdfeditor5.desktop.old	2019-06-10 10:04:48.309906137 +0200
++++ master-pdf-editor-5/masterpdfeditor5.desktop	2019-06-10 10:05:11.428327404 +0200
+@@ -1,10 +1,9 @@
+ [Desktop Entry]
+ Name=Master PDF Editor 5
+ Comment=Edit PDF files
+-Exec=/opt/master-pdf-editor-5/masterpdfeditor5 %f
+-Path=/opt/master-pdf-editor-5
++Exec=masterpdfeditor5 %f
+ Terminal=false
+-Icon=/opt/master-pdf-editor-5/masterpdfeditor5.png
++Icon=masterpdfeditor5.png
+ Type=Application
+-Categories=Office;Graphics;
+-MimeType=application/pdf;application/x-bzpdf;application/x-gzpdf;
+\ No newline at end of file
++Categories=Office;
++MimeType=application/pdf;application/x-bzpdf;application/x-gzpdf;
