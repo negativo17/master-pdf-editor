@@ -2,11 +2,11 @@
 %global         debug_package %{nil}
 
 Name:           master-pdf-editor
-Version:        5.4.20
-Release:        2%{?dist}
+Version:        5.4.38
+Release:        1%{?dist}
 Summary:        Edit PDF documents
 License:        Proprietary
-URL:            http://code-industry.net/pdfeditor.php
+URL:            https://code-industry.net/free-pdf-editor/
 
 ExclusiveArch:  x86_64
 
@@ -50,11 +50,15 @@ install -p -m 644 -D masterpdfeditor5.desktop %{buildroot}/%{_datadir}/applicati
 %check
 desktop-file-validate %{buildroot}/%{_datadir}/applications/masterpdfeditor5.desktop
 
+%if 0%{?rhel} == 7
+
 %post
 /usr/bin/update-desktop-database &> /dev/null || :
 
 %postun
 /usr/bin/update-desktop-database &> /dev/null || :
+
+%endif
 
 %files
 %doc license.txt
@@ -64,5 +68,8 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/masterpdfeditor5.des
 %{_libdir}/%{name}
 
 %changelog
+* Wed Jul 24 2019 Simone Caronni <negativo17@gmail.com> - 5.4.38-1
+- Update to 5.4.38.
+
 * Mon Jun 10 2019 Simone Caronni <negativo17@gmail.com> - 5.4.20-1
 - First build.
