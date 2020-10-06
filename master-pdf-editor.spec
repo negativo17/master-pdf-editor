@@ -1,8 +1,10 @@
 %global         __strip /bin/true
 %global         debug_package %{nil}
 
+%global         __requires_exclude ^(libQt5Gui\\.so\\..*(Qt_5_PRIVATE_API).*)$
+
 Name:           master-pdf-editor
-Version:        5.4.38
+Version:        5.6.49
 Release:        1%{?dist}
 Summary:        Edit PDF documents
 License:        Proprietary
@@ -10,7 +12,7 @@ URL:            https://code-industry.net/free-pdf-editor/
 
 ExclusiveArch:  x86_64
 
-Source0:        http://code-industry.net/public/%{name}-%{version}-qt5.amd64.tar.gz
+Source0:        http://code-industry.net/public/%{name}-%{version}-qt5.x86_64.tar.gz
 Source1:        %{name}-wrapper
 Patch1:         %{name}-desktop.patch
 
@@ -68,6 +70,9 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/masterpdfeditor5.des
 %{_libdir}/%{name}
 
 %changelog
+* Tue Oct 06 2020 Simone Caronni <negativo17@gmail.com> - 5.6.49-1
+- Update to 5.6.49.
+
 * Wed Jul 24 2019 Simone Caronni <negativo17@gmail.com> - 5.4.38-1
 - Update to 5.4.38.
 
